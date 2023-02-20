@@ -1,0 +1,27 @@
+{
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentSize": 2,
+    "lineWidth": 80,
+    "ignore": ["node_modules/", "prisma/", "dist/", ".next/"]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingComma": "all"
+    }
+  },
+  "files": {
+    "ignore": ["node_modules/", "prisma/", "dist/", ".next/"]
+  },
+  "linter": {
+    "enabled": true,
+    "ignore": ["node_modules/", "prisma/", "dist/", "./next"],
+    "rules": {
+      "recommended": true
+    }
+  }
+}
+
+
