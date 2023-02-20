@@ -1,5 +1,6 @@
 'use client';
 import '../globals.css';
+import '@tremor/react/dist/esm/tremor.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/500.css';
@@ -11,7 +12,6 @@ import { Notepad } from 'phosphor-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { rippleEffect } from '@/utils/misc';
-import { openStdin } from 'process';
 
 const SectionItem = ({
   icon,
