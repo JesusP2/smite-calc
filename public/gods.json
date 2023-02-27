@@ -139,7 +139,15 @@
       "description": "Achilles adapts to the tide of Battle. While in the Fountain, Achilles can choose to wear armor, granting him bonus Health and Protections, or forgo it, granting him bonus Movement Speed and Physical Power. To swap, use Achilles' Basic Attack while the Passive targeter is active. ",
       "icon": "https://smite-builder.b-cdn.net/skills/achilles-1-0.png",
       "level": 5,
-      "name": "Gift of the Gods"
+      "name": "Gift of the Gods",
+      "health": 25,
+      "healthPerLevel": 15,
+      "protections": 5,
+      "protectionsPerLevel": 1.5,
+      "%movementSpeed": 1,
+      "%movementSpeedPerLevel": 0.25,
+      "physicalPower": 3,
+      "physicalPowerPerLevel": 1.5
     },
     "physicalProtection": 23.8,
     "physicalProtectionPerLevel": 3.2,
@@ -3696,7 +3704,22 @@
       "description": "Cernnunos imbues his glaive with the power of the 4 seasons. Activating this ability rotates him through 4 different bonuses to his basic attacks.\n\nSpring Growth: Bonus Physical Lifesteal\nSummer Heat: Bonus Damage\nAutumn Decay: Debuff for 7s\nWinter Chill: Slows for 1s",
       "icon": "https://smite-builder.b-cdn.net/skills/cernunnos-2-0.png",
       "level": 5,
-      "name": "Shifter of Seasons"
+      "name": "Shifter of Seasons",
+      "stances": {
+        "Spring Growth": {
+          "lifesteal": [5, 7.5, 10, 12.5, 15]
+        },
+        "Automm Decay": {
+          "flat_reduction": [10, 14, 18, 22, 26]
+        },
+        "Summer Heat": {
+          "powerDamage": [5, 10, 15, 20, 25],
+          "%powerDamage": 7.5
+        },
+        "Winter Chill": {
+          "movement_slow": [7, 9, 11, 13, 15]
+        }
+    }
     },
     "abilityThree": {
       "cooldown": [
