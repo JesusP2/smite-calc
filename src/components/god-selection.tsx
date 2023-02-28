@@ -1,8 +1,8 @@
-'use client';
-import Image from 'next/image';
-import { pathToName } from '@/utils/misc';
-import godsInfo from '../../public/gods.json';
-import { IGod } from '@/utils/types';
+"use client";
+import Image from "next/image";
+import { pathToName } from "@/utils/misc";
+import gods from "../../public/gods.json";
+import type { GodsNames } from "@/utils/types";
 
 interface Data {
   name: string;
@@ -25,12 +25,12 @@ function BarList({ data }: { data: Data[] }) {
             </h4>
             <div
               className="h-6 w-[40%] bg-neutral-100 rounded-sm"
-              style={{ width: maxBarLen + '%' }}
+              style={{ width: maxBarLen + "%" }}
             >
               <div
                 className="h-6 bg-sky-200 rounded-sm flex items-center pl-2"
                 style={{
-                  width: value > max ? '100%' : (value / max) * 100 + '%',
+                  width: value > max ? "100%" : (value / max) * 100 + "%",
                 }}
               >
                 <p className="text-sm text-sky-700 font-medium">{value}</p>
@@ -46,7 +46,9 @@ function BarList({ data }: { data: Data[] }) {
 
 export default function GodSelection({
   onSelect,
-}: { onSelect: (god: IGod) => void }) {
+}: {
+  onSelect: (god: GodsNames) => void;
+}) {
   return (
     <div>
       <h1 className="text-2xl mb-4 mt-8 ml-2 max-sm:ml-12 font-semibold font-inter text-[#1e293b]">
@@ -55,58 +57,58 @@ export default function GodSelection({
       <BarList
         data={[
           {
-            name: 'Basic Attack',
+            name: "Basic Attack",
             value: 83,
             max: 10000,
           },
           {
-            name: 'Power',
+            name: "Power",
             value: 128,
             max: 400,
           },
           {
-            name: 'Attack Speed',
+            name: "Attack Speed",
             value: 1.75,
             max: 2.5,
           },
           {
-            name: 'Lifesteal',
+            name: "Lifesteal",
             value: 35,
             max: 100,
           },
           {
-            name: 'Flat Penetration',
+            name: "Flat Penetration",
             value: 40,
             max: 50,
           },
           {
-            name: '% Penetration',
+            name: "% Penetration",
             value: 40,
             max: 100,
           },
           {
-            name: 'Crit chance',
+            name: "Crit chance",
             value: 45,
             max: 100,
           },
           {
-            name: 'Defense Reduction',
+            name: "Defense Reduction",
             value: 20,
             max: 50,
           },
           {
-            name: '% Defense Reduction',
+            name: "% Defense Reduction",
             value: 28,
             max: 100,
           },
         ]}
       />
       <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-4 mx-auto">
-        {godsInfo.map((god: typeof godsInfo[0]) => (
+        {Object.entries(gods).map(([godName, god]) => (
           <div
             className="group mx-auto hover:cursor-pointer"
             key={god.icon}
-            onClick={() => onSelect(god)}
+            onClick={() => onSelect(godName as GodsNames)}
           >
             <div className="relative w-full">
               <div className="group-hover:w-full group-hover:h-[calc(100%-24px)] bg-gray-800 group-hover:absolute bg-opacity-50 cursor-pointer" />
@@ -129,14 +131,14 @@ export default function GodSelection({
 
 // export default function GodSelection({
 //   onSelect,
-// }: { onSelect: (god: IGod) => void }) {
+// }: { onSelect: (god: GodsNames) => void }) {
 //   return (
 //     <div>
 //       <h1 className="text-2xl mb-4 mt-8 ml-2 max-sm:ml-12 font-semibold font-inter text-[#1e293b]">
 //         Select a god
 //       </h1>
 //       <div className="">
-//         {godsInfo.map((god: Idk) => (
+//         {Object.entries(gods).map(([godName, god]) => (
 //           <div key={god.icon}>
 //             <Image
 //               src={god.icon}
@@ -157,16 +159,16 @@ export default function GodSelection({
 //   );
 // }
 
-function SkillRenderer({
+function SkillRenderer<T extends GodsNames>({
   ability,
 }: {
   ability:
-    | IGod['abilityOne']
-    | IGod['abilityTwo']
-    | IGod['abilityThree']
-    | IGod['abilityFour'];
+    | typeof gods[T]['abilityOne']
+    | typeof gods[T]['abilityTwo']
+    | typeof gods[T]['abilityThree']
+    | typeof gods[T]['abilityFour']
 }) {
-  if ('length' in ability) {
+  if ("length" in ability) {
     return (
       <div>
         {ability.map((stance, idx) => {
