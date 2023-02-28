@@ -41,15 +41,34 @@ export const abilityOne = (level: number, range: number) => {
   }
 };
 
-export const abilityTwo = (level: number, physicalPower: number) => {
+const getProcs = (procs: number, max: number) => (max < procs ? max : procs);
+export const abilityTwo = (
+  level: number,
+  physicalPower: number,
+  procs: number
+) => {
   const stats = gods.Achilles.abilityTwo;
-  const heal =
-    (stats.heal[level - 1] + physicalPower * 0.1) *
-    stats.maxHealsPerAbility[level - 1];
+  const healPerProc = stats.heal[level - 1] + physicalPower * 0.1;
+  const maxHealsPerAbility =
+    healPerProc * getProcs(procs, stats.maxHealsPerAbility[level - 1]);
   return {
-    heal,
+    healPerProc,
+    maxHealsPerAbility,
     physicalPower: physicalPower * stats["%physicalPower"][level - 1],
     "%crowdControlReduction": stats["%crowdControlReduction"],
     "%protections": stats["%protections"][level - 1],
   };
 };
+export const abilityThree = (level: number, physicalPower: number) => {
+  const stats = gods.Achilles.abilityThree;
+  return {
+    damage: stats[0].damage[level - 1] + physicalPower * stats[0]["%physicalPower"],
+  };
+};
+
+export const abilityFour = (level: number, physicalPower: number) => {
+  const stats = gods.Achilles.abilityFour
+  return {
+    damage: stats.damage[level - 1] + physicalPower * stats["%physicalPower"]
+  }
+}

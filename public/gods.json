@@ -8,7 +8,7 @@
       "icon": "https://smite-builder.b-cdn.net/skills/achilles-5-0.png",
       "level": 5,
       "name": "Fatal Strike",
-      "powerDamage": 100
+      "%physicalPower": 100
     },
     "abilityOne": {
       "cooldown": 14,
@@ -32,7 +32,7 @@
         "icon": "https://smite-builder.b-cdn.net/skills/achilles-4-0.png",
         "level": 5,
         "name": "Combat Dodge",
-        "powerDamage": 45
+        "%physicalPower": 45
       },
       {
         "cooldown": [14, 13, 12, 11, 10],
@@ -42,7 +42,7 @@
         "icon": "https://smite-builder.b-cdn.net/skills/achilles-4-1.png",
         "level": 5,
         "name": "Combat Dodge",
-        "powerDamage": 45
+        "%physicalPower": 45
       }
     ],
     "abilityTwo": {
