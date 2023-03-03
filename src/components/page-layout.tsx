@@ -1,26 +1,27 @@
-'use client';
-import GodSelection from '@/components/god-selection';
-import { IGod } from '@/utils/types';
-import { useEffect, useRef, useState } from 'react';
-import Toast from './toast';
+"use client";
+import GodSelection from "@/components/god-selection";
+import { GodsNames } from "@/utils/types";
+import { useEffect, useRef, useState } from "react";
+import ItemSelect from "./item-select";
+import Toast from "./toast";
 
 export default function PageLayout() {
-  const [gods, setGods] = useState<IGod[]>([]);
+  const [gods, setGods] = useState<GodsNames[]>([]);
   const [open, setOpen] = useState(false);
   const [toastInfo, setToastInfo] = useState<{
-    variant: 'success' | 'error';
+    variant: "success" | "error";
     description: string;
   }>({
-    variant: 'success',
-    description: '',
+    variant: "success",
+    description: "",
   });
   const timerRef = useRef(0);
 
-  function onGodSelect(god: IGod) {
+  function onGodSelect(god: GodsNames) {
     if (gods.length >= 10) {
       setToastInfo({
-        variant: 'error',
-        description: 'updated',
+        variant: "error",
+        description: "updated",
       });
       setOpen(false);
       window.clearTimeout(timerRef.current);
@@ -44,6 +45,9 @@ export default function PageLayout() {
         variant={toastInfo.variant}
         description={toastInfo.description}
       />
+      <div className="mt-4">
+        <ItemSelect />
+      </div>
       {gods.length >= 1 ? null : (
         <GodSelection onSelect={(god) => onGodSelect(god)} />
       )}
