@@ -737,17 +737,6 @@
     "tier": 2,
     "type": "Physical"
   },
-  "Shillelagh": {
-    "cost": 1300,
-    "health": 200,
-    "icon": "https://smite-builder.b-cdn.net/items/shillelagh.jpg",
-    "id": 14083,
-    "mana": 100,
-    "name": "Shillelagh",
-    "physicalPower": 15,
-    "tier": 2,
-    "type": "Physical"
-  },
   "Dawnbringer": {
     "cost": 2650,
     "crowdControl": 20,
@@ -989,18 +978,6 @@
     "magicalProtection": 15,
     "name": "Cleric's Cloak",
     "physicalProtection": 15,
-    "tier": 2,
-    "type": "Both"
-  },
-  "Armored Cloak": {
-    "cost": 1550,
-    "health": 125,
-    "icon": "https://smite-builder.b-cdn.net/items/armored-cloak.jpg",
-    "id": 9843,
-    "magicalProtection": 25,
-    "mana": 125,
-    "name": "Armored Cloak",
-    "physicalProtection": 25,
     "tier": 2,
     "type": "Both"
   },
@@ -1634,57 +1611,6 @@
     "tier": 4,
     "type": "Magical"
   },
-  "Enchanted Buckler": {
-    "cost": 650,
-    "icon": "https://smite-builder.b-cdn.net/items/enchanted-buckler.jpg",
-    "id": 10190,
-    "magicalProtection": 10,
-    "name": "Enchanted Buckler",
-    "physicalPower": 7,
-    "tier": 1,
-    "type": "Physical"
-  },
-  "Warded Shield": {
-    "cost": 1150,
-    "icon": "https://smite-builder.b-cdn.net/items/warded-shield.jpg",
-    "id": 9835,
-    "magicalProtection": 25,
-    "name": "Warded Shield",
-    "physicalPower": 15,
-    "tier": 2,
-    "type": "Physical"
-  },
-  "Imperial Helmet": {
-    "cost": 600,
-    "icon": "https://smite-builder.b-cdn.net/items/imperial-helmet.jpg",
-    "id": 10603,
-    "magicalPower": 10,
-    "name": "Imperial Helmet",
-    "physicalProtection": 15,
-    "tier": 1,
-    "type": "Magical"
-  },
-  "Jade Mountain Helm": {
-    "cost": 1200,
-    "icon": "https://smite-builder.b-cdn.net/items/jade-mountain-helm.jpg",
-    "id": 10602,
-    "magicalPower": 20,
-    "name": "Jade Mountain Helm",
-    "physicalProtection": 20,
-    "tier": 2,
-    "type": "Magical"
-  },
-  "Dynasty Plate Helm": {
-    "cost": 1600,
-    "health": 50,
-    "icon": "https://smite-builder.b-cdn.net/items/dynasty-plate-helm.jpg",
-    "id": 10605,
-    "magicalPower": 40,
-    "name": "Dynasty Plate Helm",
-    "physicalProtection": 20,
-    "tier": 2,
-    "type": "Magical"
-  },
   "Short Bow": {
     "attackSpeed": 15,
     "cost": 650,
@@ -1841,26 +1767,6 @@
     "physicalProtection": 30,
     "tier": 3,
     "type": "Both"
-  },
-  "Shuriken": {
-    "attackSpeed": 5,
-    "cost": 650,
-    "icon": "https://smite-builder.b-cdn.net/items/shuriken.jpg",
-    "id": 12667,
-    "name": "Shuriken",
-    "physicalPower": 7,
-    "tier": 1,
-    "type": "Physical"
-  },
-  "8-Pointed Shuriken": {
-    "attackSpeed": 7,
-    "cost": 1400,
-    "icon": "https://smite-builder.b-cdn.net/items/8-pointed-shuriken.jpg",
-    "id": 12668,
-    "name": "8-Pointed Shuriken",
-    "physicalPower": 25,
-    "tier": 2,
-    "type": "Physical"
   },
   "Katana": {
     "cost": 600,
