@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { Notepad } from 'phosphor-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { rippleEffect } from '@/utils/misc';
+import { rippleEffect } from '@/lib/utils';
 
 const SectionItem = ({
   icon,

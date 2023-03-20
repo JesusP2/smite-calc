@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import { pathToName } from "@/utils/misc";
 import gods from "../../public/gods.json";
-import type { GodsNames } from "@/utils/types";
+import type { GodsNames } from "@/lib/types";
 
 interface Data {
   name: string;
@@ -19,7 +18,7 @@ function BarList({ data }: { data: Data[] }) {
       </h3>
       <div className="flex flex-col gap-y-4 my-4">
         {data.map(({ name, value, max }) => (
-          <div className="flex gap-x-4 items-center">
+          <div className="flex gap-x-4 items-center" key={name}>
             <h4 className="text-sm font-medium font-inter flex-none text-neutral-600 w-36">
               {name}
             </h4>
@@ -114,12 +113,12 @@ export default function GodSelection({
               <div className="group-hover:w-full group-hover:h-[calc(100%-24px)] bg-gray-800 group-hover:absolute bg-opacity-50 cursor-pointer" />
               <Image
                 src={god.icon}
-                alt={pathToName(god.icon)}
+                alt={godName}
                 width={115}
                 height={153}
               />
               <p className="flex justify-center font-semibold font-inter">
-                {pathToName(god.icon)}
+                {godName}
               </p>
             </div>
           </div>

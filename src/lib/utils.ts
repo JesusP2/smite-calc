@@ -1,3 +1,6 @@
+import { ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
 export function pathToName(path: string) {
   return path
     .split('/')
@@ -27,4 +30,8 @@ export function rippleEffect(event: React.MouseEvent<HTMLButtonElement, MouseEve
 	}
 
 	btn.appendChild(circle);
+}
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }

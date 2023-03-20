@@ -3,7 +3,6 @@ import * as Select from "@radix-ui/react-select";
 import { CaretUp, CaretDown } from "phosphor-react";
 import clsx from "clsx";
 import { forwardRef } from "react";
-import Image from "next/image";
 
 export default () => (
   <Select.Root>

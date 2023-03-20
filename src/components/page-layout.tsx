@@ -1,9 +1,10 @@
 "use client";
 import GodSelection from "@/components/god-selection";
-import { GodsNames } from "@/utils/types";
+import { GodsNames } from "@/lib/types";
 import { useEffect, useRef, useState } from "react";
-import ItemSelect from "./item-select";
 import Toast from "./toast";
+import ItemSelector from "./item-selector";
+import items from "@/../public/items.json";
 
 export default function PageLayout() {
   const [gods, setGods] = useState<GodsNames[]>([]);
@@ -45,9 +46,7 @@ export default function PageLayout() {
         variant={toastInfo.variant}
         description={toastInfo.description}
       />
-      <div className="mt-4">
-        <ItemSelect />
-      </div>
+      <ItemSelector onSelect={(item) => console.log(items[item])} />
       {gods.length >= 1 ? null : (
         <GodSelection onSelect={(god) => onGodSelect(god)} />
       )}
